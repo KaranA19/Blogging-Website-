@@ -1,0 +1,102 @@
+<%- include("partials/header"); -%>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide mb-lg-3 " data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item" data-bs-interval="10000">
+      <!-- <text x="50%" y="50%" fill="#aaa" dy=".3em">First slide</text> -->
+      <div class="firstslide"><svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg></div>
+
+      <div class="carousel-caption   mbot fhand ">
+        <h2>“The way to get started is to quit talking and begin doing.” </h2>
+        <br>
+        <p class="croup">-Walt Disney</p>
+        <img class="quotecircle" src="https://lumiere-a.akamaihd.net/v1/images/ct_video_mickeymousefranchise_mickey_ddt-16771_fed45249.jpeg?region=0,0,450,450" alt="">
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <div class="secondslide"><svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Second slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg></div>
+
+      <div class="carousel-caption mbot fhand">
+        <h2>“Happiness is not something readymade, it comes from your own actions.”</h2>
+        <br>
+        <p class="croup">-Dalai Lama</p>
+        <img class="quotecircle" src="https://i.natgeofe.com/n/4508721a-b259-41c4-bed5-91f061a51957/happiness-dalai-lama-bhutan_square.jpg" alt="">
+      </div>
+    </div>
+    <div class="carousel-item active">
+      <div class="thirdslide"><svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Third slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title></svg></div>
+
+      <div class="carousel-caption mbot fhand" >
+        <h2>“When something is important enough, you do it even if the odds are not in your favor.”</h2>
+        <br>
+        <p class="croup">-Elon Musk</p>
+        <img class=" three" src="https://imageio.forbes.com/specials-images/imageserve/5f47d4de7637290765bce495/0x0.jpg?format=jpg&crop=2146,2145,x1699,y559,safe&height=416&width=416&fit=bounds" alt="">
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
+
+    <h1 class="startContent">Home</h1>
+    <p style="color:#7F8487"> <%= startingContent %> </p>
+
+<div class="home">
+
+  <%  posts.forEach(function(post){ %>
+<div class="posts">
+
+
+  <form action="/delete" method="post">
+  <div class="">
+      <h1 class="startContent"><%=post.title%></h1>
+
+  <div class="checkbox">
+
+      <label><input type="checkbox" name="checkbox" value="<%= post._id %>" onChange="this.form.submit()"><span class="label"><i class="fa-solid fa-trash fa-sm"></i></span></label>
+
+    </div>
+
+      </div>
+      <input type="hidden" name="titleName" value="<%=post.title%>"></input>
+      </form>
+
+
+
+    <p style="color:#7F8487">
+    <%=post.content.substring(0, 500) + " ..."%>
+  <a href="/posts/<%=post.title%>" style="color:#8FBDD3">Read More</a>
+    </p>
+
+  </div>
+    <% }) %>
+
+  </div>
+     <button class="plusbutton" type="submit" name="list"><a class="plusbtn" href="/compose">+</a></button>
+
+
+
+<%- include("partials/footer"); -%>

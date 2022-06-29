@@ -1,0 +1,233 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+nav{
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.form-control-sm{
+border: 0;
+}
+
+
+.jumbo{
+  padding-top: 10%
+}
+
+
+.startContent{
+  font-family: 'Pacifico', cursive;
+font-family: 'Raleway', sans-serif;
+}
+
+.postHeading{
+  font-family: 'Pacifico', cursive;
+font-family: 'Raleway', sans-serif;
+font-weight: 900;
+}
+
+
+.btn-search{
+  color: white;
+  border-color: white;
+
+}
+
+.btn-logout{
+ margin-left: 2%;
+  color: red;
+  border-color: red;
+}
+
+/* .navbar-brand{
+  color:#DDDDDD;
+}
+
+.nav-link{
+  color: white !important;
+} */
+/* .container-fluid {
+    margin-top: 70px;
+    margin-bottom: 70px;
+} */
+/* .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+
+}
+.navbar-nav  li a:hover {
+    color: #8D8DAA !important;
+} */
+
+.plusbutton {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #ff0000b4;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  padding-bottom: 6px;
+  border-width: 0;
+  margin-left: 95%;
+}
+.plusbtn{
+  color: white;
+  text-decoration: none;
+}
+
+
+.footer-padding {
+	padding-bottom: 60px;
+}
+
+.footer {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	/* background-color: #8D8DAA; */
+  background-color: #8FBDD3;
+
+}
+
+.footer p {
+	margin-top: 25px;
+	font-size: 12px;
+  color: #fff;
+}
+
+/* .post{
+  flex: 9;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+} */
+.posts{
+  width: 50%;
+  padding: 30px;
+
+}
+
+.contentSpace{
+  /* white-space: pre-wrap;
+overflow-wrap: break-word; */
+padding: 3% 9%;
+white-space: pre-line;
+}
+
+
+.home{
+  display: flex;
+  flex-wrap: wrap;
+}
+.home > posts{
+  flex: 50%;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+width: 64.2%;
+
+
+}
+.firstslide{
+  background-color: #ffffff;
+  background-image: linear-gradient(43deg, #ffffff 0%, #e8ebf0 46%, #ffffff 100%);
+
+
+}
+.secondslide{
+  background-color: #ffffff;
+  background-image: linear-gradient(43deg, #ffffff 0%, #e8ebf0 46%, #ffffff 100%);
+
+}
+.thirdslide{
+  background-color: #ffffff;
+  background-image: linear-gradient(43deg, #ffffff 0%, #e8ebf0 46%, #ffffff 100%);
+
+}
+.mbot{
+  /* margin-bottom: 125px; */
+  margin-bottom: 10px;
+  display: block;
+}
+
+.quotecircle{
+
+  border-radius: 50%;
+  margin: 10px;
+  width:10%;
+}
+.three{
+  border-radius: 50%;
+  width: 10%;
+}
+.fhand{
+  font-family: cursive;
+}
+.croup{
+  font-family: cursive;
+}
+input[type=checkbox] {
+  display:none;
+  background: url(/views/trash-can.png);
+}
+.label {
+
+  display: inline-block;
+  padding: 3px;
+  background: url(/views/trash-can.png) no-repeat left center;
+  /* padding-left: 15px; */
+}
+.fa-solid{
+line-height: 0 !important;
+}
+
+.lgin{
+  padding-left: 22%;
+}
+
+.wlcmcvr{
+  background-color: #ffffff;
+  background-image: linear-gradient(43deg, #ffffff 0%, #ffffff 50%, #ffffff 100%);
+}
+.wrng{
+  color:red;
+ display:none;
+}
+.mhead{
+  background-color: #ff0000b4;
+}
+.modal{
+
+width: 40%;
+margin-top: 3%;
+}
+.mbtn{
+  margin:5px;
+  margin-left: 15px;
+  background-color: black;
+}
