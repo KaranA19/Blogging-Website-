@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
 const _ = require('lodash');
+const encrypt=require('mongoose-encryption'); 
 
 const homeStartingContent = "A blog (a shortened version of “weblog”) is an online journal or informational website displaying information in reverse chronological order, with the latest posts appearing first, at the top. A blog may be the work of a single person or jointly operated by a group of people, and bloggers tend to use content managament systems or blog software such as WordPress, Blogger, or Joomla.Blogging enables you to reach the billions of people that use the Internet. Blogging can help you promote yourself or your business. Blogging works as a method for attracting an audience because it provides something of value to them before asking for anything in return.";
 
@@ -18,19 +19,29 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-var conn1     = mongoose.createConnection('mongodb://localhost:27017/userDB');
-var conn2      = mongoose.createConnection('mongodb://localhost:27017/BlogsDb');
+var conn1  = mongoose.createConnection('mongodb+srv://admin:admin@cluster0.70pjlgu.mongodb.net/userDB',{ useUnifiedTopology: true });
+var conn2  = mongoose.createConnection('mongodb+srv://admin:admin@cluster0.70pjlgu.mongodb.net/BlogsDb',{ useUnifiedTopology: true });
 
-const User    = conn1.model('Model', new mongoose.Schema({
+// const User    = conn1.model('Model', new mongoose.Schema({
+//   email:String,
+//   password:String
+// }));
+
+const userSchema = new mongoose.Schema({
   email:String,
   password:String
-}));
+});
+
+const User = conn1.model("User", userSchema);
 
 
 const Post    = conn2.model('Model', new mongoose.Schema({
   title: String,
   content: String
 }));
+
+const secret="ThisisourSecret.";
+userSchema.plugin(encrypt,{ secret : secret, encryptedFields: ["password"] });
 
 //
 // mongoose.connect("mongodb://localhost:27017/BlogsDb", {useNewUrlParser: true,
